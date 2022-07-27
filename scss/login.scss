@@ -1,0 +1,94 @@
+@import'layout.css';
+@mixin size ($w, $h){
+    width: $w;
+    height: $h;
+}
+@mixin flex($j, $a, $d) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+    flex-direction: $d;
+}
+body{
+    background-color: #efe9e7;
+}
+main{
+    #title{
+        width: 300px;
+        margin: 0 auto;
+        padding: 30px 0;
+        text-align: center;
+        h1{
+            color: #3D1101;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        p{
+            color: #3D1101;
+            font-size: 20px;
+            display: block;
+            margin-top: 5px;
+            @media (max-width:568px){
+                display: none;
+            }
+        }
+    }
+    #login{
+        @include size(300px, 273px);
+        background-color: #efe9e7;
+        margin: 10px auto;
+        border-radius: 5px;
+        border-top: 3px solid #FF5E45 ;
+        box-shadow: 3px 3px 8px 1px #b8b6b0;
+        padding: 10px;
+        span:first-child{
+            font-size: 18px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: #3D1101;
+        }
+        div{
+            width: 100%;
+            margin: 20px 0;
+            label{
+                font-size: 16px;
+                color: #3D1101;
+                margin-bottom: 5px;
+                display: block;
+            }
+            input{
+                width: 100%;
+                background: #FFFFFF;
+                border: 1px solid #CCCCCC;
+                box-shadow: inset 0px 1px 0px 0px #ECECEC;
+                border-radius: 3px;
+                padding: 10px;
+                font-family: FontAwesome;
+            }
+            #email{
+                margin-bottom: 15px;
+            }
+            a{
+                font-size: 14px;
+                font-size: 14px;
+                color: #FF5E45;
+
+            }
+        }
+        .button{
+            @include flex(space-evenly, center, unset);
+            margin-top: 30px;
+            button{
+                @include size(125px, 32px);
+                background: rgba(0,0,0,0.35);
+                border: unset;
+                border-radius: 3px;
+                color: #FFFFFF;
+            }
+            button:last-child{
+                background-color: #F56C23;
+            }
+        }
+    }
+}

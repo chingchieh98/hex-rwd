@@ -1,0 +1,188 @@
+@import 'layout.css';
+@mixin size($w, $h) {
+    width: $w;
+    height: $h;
+}
+@mixin flex($j, $a) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}
+// ------------------------------------------------//
+body{
+    background-color: #efe9e7;
+}
+main{
+    display: flex;
+    @media (max-width:568px){
+        display: unset;
+    }
+    #options{
+        width: 30%;
+        padding: 48px 20px 0 20px;
+        @media (max-width:568px){
+            padding: 35px 20px;
+            width: 100%;
+        }
+        .options-title{
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            h4{
+                font-size: 20px;
+                color: #3D1101;
+                line-height: 32px;
+                margin-left: 15px;
+            }
+        }
+        .option{
+            color: #3D1101;
+            line-height: 32px;
+            padding: 2px 8px;
+        }
+        .last-option{
+            background: #3D1101;
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+        .line{
+            border: 1px solid #3D1101;
+        }
+    }
+    #meals{
+        padding: 48px 20px 0 0;
+        width: 70%;
+        @media (max-width:568px){
+            padding: 0 20px 48px 20px;
+            width: 100%;
+        }
+        .toolBar{
+            @include flex(space-between, unset);
+            @media (max-width:568px){
+                flex-direction: column;
+            }
+            form{
+                width: 70%;
+                position: relative;
+                @media (max-width:568px){
+                    width: 100%;
+                }
+                input{
+                    @include size(100%, 32px);
+                    padding: 0 250px 0 10px;
+                    border: 2px solid #3D1101;
+                    background-color: #efe9e7;
+                }
+                button{
+                    @include size(36ox, 30px);
+                    background: #3D1101;
+                    border: unset;
+                    position: absolute;
+                    right: 0;
+                    top: 1px;
+                    .fa-solid{
+                        color: #FFFFFF;
+                    }
+                }
+            }
+            .checkout{
+                @include flex(unset, center);
+                @media (max-width:568px){
+                   justify-content: flex-end;
+                   margin-top: 20px;
+                }
+                .line{
+                    @include size(1px, 50%);
+                    background-color: #3D1101;
+                    margin: 0 17px;
+                    @media (max-width:568px){
+                        height: 10px;
+                    }
+                }
+                a{
+                    color: #3D1101;;
+                }
+            } 
+        }
+        .meals{
+            @include flex(space-between, unset);
+            flex-wrap: wrap;
+            margin: 30px 0;
+            .meal{
+                width: 31.333%;
+                background: #EFE9E7;
+                box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+                position: relative;
+                margin-bottom: 30px;
+                @include flex(unset, center);
+                flex-direction: column;
+                @media (max-width:768px){
+                    width: 48%;
+                }
+                @media (max-width:568px){
+                    width: 100%;
+                }
+                img{
+                    @include size(100%, 100%);
+                }
+                .save{
+                    position: absolute;
+                    left: 5px;
+                    top: 5px;
+                    .fa-heart{
+                        color: #FFFFFF;
+                    }
+                }
+                h4{
+                    font-size: 20px;
+                    color: #3D1101;
+                    margin: 10px 0;
+                }
+                p{
+                    font-size: 12px;
+                    color: #3D1101;
+                    margin: 8px 0;
+                }
+                p::after{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    border: 1px solid #3D1101;
+                    margin: 8px 0 20px 0;
+                }
+                .price{
+                    display: block;
+                    text-align: center;
+                    font-size: 20px;
+                    span{
+                        font-style: italic;
+                        font-weight: bold;
+                    }
+                }
+                button{
+                    width: 90%;
+                    border: 2px solid #FF5E45;
+                    border-radius: 3px;  
+                    padding: 5px;
+                    margin: 10px 0;
+                    .fa-solid{
+                        color: #FF5E45;
+                        margin-right: 9px;
+                    }
+                    span{
+                        color: #FF5E45;
+                    }   
+                }
+                button:hover{
+                    background-color: #FF5E45;
+                    .fa-solid{
+                        color: #efe9e7;
+                    }
+                    span{
+                        color: #efe9e7;
+                    }   
+                }
+            }
+        }
+    }
+}

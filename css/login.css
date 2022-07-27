@@ -1,0 +1,89 @@
+@import 'layout.css';
+body {
+  background-color: #efe9e7;
+}
+
+main #title {
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+}
+main #title h1 {
+  color: #3D1101;
+  font-size: 48px;
+  font-weight: bold;
+}
+main #title p {
+  color: #3D1101;
+  font-size: 20px;
+  display: block;
+  margin-top: 5px;
+}
+@media (max-width: 568px) {
+  main #title p {
+    display: none;
+  }
+}
+main #login {
+  width: 300px;
+  height: 273px;
+  background-color: #efe9e7;
+  margin: 10px auto;
+  border-radius: 5px;
+  border-top: 3px solid #FF5E45;
+  box-shadow: 3px 3px 8px 1px #b8b6b0;
+  padding: 10px;
+}
+main #login span:first-child {
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: #3D1101;
+}
+main #login div {
+  width: 100%;
+  margin: 20px 0;
+}
+main #login div label {
+  font-size: 16px;
+  color: #3D1101;
+  margin-bottom: 5px;
+  display: block;
+}
+main #login div input {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-shadow: inset 0px 1px 0px 0px #ECECEC;
+  border-radius: 3px;
+  padding: 10px;
+  font-family: FontAwesome;
+}
+main #login div #email {
+  margin-bottom: 15px;
+}
+main #login div a {
+  font-size: 14px;
+  font-size: 14px;
+  color: #FF5E45;
+}
+main #login .button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: unset;
+  margin-top: 30px;
+}
+main #login .button button {
+  width: 125px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.35);
+  border: unset;
+  border-radius: 3px;
+  color: #FFFFFF;
+}
+main #login .button button:last-child {
+  background-color: #F56C23;
+}/*# sourceMappingURL=login.css.map */

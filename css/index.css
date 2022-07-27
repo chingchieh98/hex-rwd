@@ -1,0 +1,252 @@
+@import 'layout.css';
+body {
+  background-color: #efe9e7;
+}
+
+#intro {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#intro p {
+  margin: 50px 0;
+  font-size: 20px;
+  color: #3D1101;
+  text-align: center;
+  line-height: 32px;
+}
+#intro p::before {
+  content: "";
+  display: block;
+  width: 122px;
+  height: 1px;
+  background-color: #979797;
+  position: absolute;
+  top: 80px;
+  left: 20%;
+}
+@media (max-width: 768px) {
+  #intro p::before {
+    display: none;
+  }
+}
+#intro p::after {
+  content: "";
+  display: block;
+  width: 122px;
+  height: 1px;
+  background-color: #979797;
+  position: absolute;
+  top: 80px;
+  right: 20%;
+}
+@media (max-width: 768px) {
+  #intro p::after {
+    display: none;
+  }
+}
+#intro .features {
+  margin: 30px 0 50px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#intro .features .feature {
+  width: 31.333%;
+  padding: 10px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #intro .features .feature {
+    width: 100%;
+    padding: 5%;
+  }
+}
+#intro .features .feature img {
+  border-radius: 50%;
+}
+#intro .features .feature h4 {
+  margin: 20px 0 10px 0;
+  font-size: 18px;
+  color: #3D1101;
+}
+#intro .features .feature p {
+  text-align: start;
+  color: #3D1101;
+  margin: unset;
+}
+
+#chef-intro {
+  width: 100%;
+  background-color: #3D1101;
+  padding: 0 45px;
+  display: flex;
+}
+@media (max-width: 800px) {
+  #chef-intro {
+    flex-direction: column;
+    align-items: center;
+    padding: unset;
+  }
+}
+#chef-intro img {
+  width: 100%;
+  margin-right: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 800px) {
+  #chef-intro img {
+    margin: 0 0 20px 0;
+  }
+}
+#chef-intro .content {
+  color: #EFE9E7;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 800px) {
+  #chef-intro .content {
+    max-width: 460px;
+    margin: 20px;
+  }
+}
+#chef-intro .content h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+#chef-intro .content h4 {
+  margin-bottom: 16px;
+}
+
+#comments {
+  margin: 18px 0;
+}
+#comments span {
+  text-align: center;
+  font-size: 24px;
+  color: #3D1101;
+  display: block;
+  margin: 32px 0;
+}
+#comments .comments {
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  #comments .comments {
+    flex-wrap: wrap;
+  }
+}
+#comments .comments .comment {
+  width: 31.3333%;
+  display: flex;
+}
+@media (max-width: 768px) {
+  #comments .comments .comment {
+    width: 80%;
+  }
+}
+#comments .comments .comment img {
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+}
+#comments .comments .comment .costumer-comment {
+  margin-left: 13px;
+}
+#comments .comments .comment .costumer-comment .name {
+  margin: 22px 0;
+  font-size: 18px;
+  color: #3D1101;
+}
+#comments .comments .comment .costumer-comment p {
+  font-family: MicrosoftJhengHeiRegular;
+  font-size: 16px;
+  color: #3D1101;
+  line-height: 24px;
+}
+#comments .comments .comment .costumer-comment .work {
+  font-size: 16px;
+  color: rgba(61, 17, 0, 0.75);
+  line-height: 24px;
+  float: right;
+  margin-top: 16px;
+}
+
+#reservation {
+  background-color: #FAFAFA;
+  padding: 50px 0;
+}
+#reservation span {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #3D1101;
+  display: block;
+  padding-bottom: 50px;
+}
+#reservation .booking {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 42px;
+}
+#reservation .booking iframe {
+  width: 48%;
+}
+@media (max-width: 568px) {
+  #reservation .booking iframe {
+    display: none;
+  }
+}
+#reservation .booking form {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 568px) {
+  #reservation .booking form {
+    width: 100%;
+  }
+}
+#reservation .booking form label {
+  font-size: 14px;
+  color: #3D1101;
+  margin-bottom: 11px;
+}
+#reservation .booking form input {
+  width: 100%;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-shadow: inset 0px 1px 0px 0px #ECECEC;
+  border-radius: 3px;
+  padding: 5px;
+}
+#reservation .booking form .select {
+  display: flex;
+  width: 10%;
+}
+#reservation .booking form .select input {
+  margin-right: 36px;
+}
+#reservation .booking form .button {
+  display: flex;
+  justify-content: end;
+}
+#reservation .booking form .button button {
+  width: 70px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+  color: #FFFFFF;
+  border: unset;
+  padding: 6px;
+}
+#reservation .booking form .button button:last-child {
+  background: #F56C23;
+  margin-left: 11px;
+}/*# sourceMappingURL=index.css.map */

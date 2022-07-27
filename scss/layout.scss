@@ -1,0 +1,214 @@
+@import'reset.css';
+@mixin size ($w, $h){
+    width: $w;
+    height: $h;
+}
+@mixin img($position, $repeat, $size){
+    background-position: $position;
+    background-repeat: $repeat;
+    background-size: $size;
+}
+@mixin flex($j, $a, $d) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+    flex-direction: $d;
+}
+@mixin position($top, $left, $x, $y) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($x, $y);
+}
+// ----------------------------------------------------------------//
+header{
+    @include size(100%, 520px);
+    @include img(center, no-repeat, cover);
+    position: relative;
+    background-image: url(../assets/header_desktop.png);
+    @media (max-width:568px){
+        background-image: url(../assets/header_mobile.png);
+    }
+    nav{
+        @include size(100%, 56px);
+        @include flex(space-between, center, unset);
+        background-color: rgba(0,0,0,0.75);
+        position: fixed;
+        z-index: 3;
+        h1{
+            padding: 0 20px; 
+            a{
+                @include size(120px, 24px);
+                @include img(center, no-repeat, cover);
+                background-image: url(../assets/logo_w@svg.svg);
+                display: block;
+                text-indent: 101%;
+                white-space: nowrap;
+                overflow: hidden; 
+            }
+        }
+        .pc-nav{
+            @include flex(space-between, unset, unset);
+            @media (max-width:568px){
+                display: none;
+            }
+            li{
+                padding: 0 20px;   
+                a{
+                    font-size: 16px;
+                    color: #FFFFFF;  
+                }
+                a:hover{
+                    color: rgb(214, 52, 52);
+                }
+            }
+        }
+        .burgerlink{
+            display: none;
+            padding-right: 20px;
+            @media (max-width:568px){
+                display: block;
+            }
+            .line{
+                @include size(40px, 5px);
+                background-color: #FFFFFF;
+                border-radius: 10px;
+                margin-bottom: 5px;
+            }
+        }
+        .menu{
+            @include size (100vw, unset);
+            background-color: rgba(0,0,0,0.75);
+            position: absolute;
+            top:56px;
+            display: none;
+            ul{
+                flex-direction: column;
+                text-align: center;
+                li{
+                    margin: 30px;
+                    a{
+                        color: #FFFFFF;
+                    }
+                    a:hover{
+                        color: #d63434;
+                        font-weight: bold;
+                        font-size: 20px;    
+                    }
+                }
+            }
+        }
+        .burgerlink:focus ~ .menu{
+            display: block;
+        }
+    }
+    .nav-bg{
+        @include size(60%, 152px);
+        @include position(unset, 50%, -50%, 125%);
+        background-color: rgba(0,0,0,0.35);
+        z-index: 2;
+        text-align: center;
+        padding: 20px 22px;
+        @media (max-width:768px){
+            @include size(80%, 152px);
+        }
+        span{
+            font-size: 36px;
+            color: #FFFFFF;
+            @media (max-width:568px){
+                display: none;
+            }
+        }
+        span:last-child{
+            font-size: 13px;
+            display: block;
+            margin-top: 16px;
+            line-height: 30px;
+            @media (max-width:568px){
+                @include position(50%, 50%, -50%, -50%);
+                font-size: 20px;
+                font-weight: bold;
+                white-space: nowrap;
+                margin-top: unset;
+                line-height: 40px;
+            }
+        }
+    }
+}
+footer{
+    @include flex(space-between, unset, unset);
+    background-color: #efe9e7;
+    padding: 40px;
+    position: relative;
+    @media (max-width:568px){
+        flex-wrap: wrap;
+    }
+    div{
+        @include flex(unset, center, unset);
+        @media (max-width:568px){
+            flex-wrap: wrap;
+        }
+        .about{
+            @include size(50%, 110px);
+            @include flex(unset, flex-start, column);
+            margin-right: 20px;
+            @media (max-width:768px){
+                display: none;
+            }
+            .title{
+                font-size: 24px;
+                color: #3D1101;
+                margin-bottom: 16px;
+            }
+            .text{
+                font-size: 16px;
+                color: #3D1101;
+            }
+        }
+        .contact{
+            @include size(50%, 110px);
+            @include flex(unset, flex-start, column);
+            @media (max-width:768px){
+                @include size(100%, 120px);
+            }
+            .title{
+                font-size: 24px;
+                color: #3D1101;
+                margin-bottom: 16px;
+            }
+            ul{
+                list-style: inside;
+                li{
+                    color: #3D1101;
+                }
+            }
+        }
+    }
+    .web{
+        @include flex(center, flex-end, column);
+        .logo{
+            margin-bottom: 22px;
+            @media (max-width:568px){
+                display: none;
+            }
+        }
+        .social-media{
+            display: flex;
+            li{
+                margin-right: 5px;
+            }
+        }
+    }
+    .go-to-top{ 
+        @include size(30px, 30px);
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        bottom: -20px;
+        a{
+            position: absolute;
+            right: 10px;
+        }
+    }
+}
